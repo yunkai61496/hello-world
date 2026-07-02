@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NightWave Music</title>
+    <meta
+      name="description"
+      content="一个简洁的暗色现代音乐网站，支持播放、切歌、进度与音量控制。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#home">
+          <span class="brand-mark">♪</span>
+          <span>NightWave</span>
+        </a>
+        <nav class="topnav" aria-label="主导航">
+          <a href="#home">首页</a>
+          <a href="#playlist">歌单</a>
+          <a href="#about">关于</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" id="home">
+          <div class="hero-copy">
+            <p class="eyebrow">个人音乐展示页</p>
+            <h1>用一首歌，把心情打开。</h1>
+            <p>
+              这是一个基于原生 HTML、CSS 和 JavaScript 的暗色现代风音乐站。
+              现在先把“可播放的最小版本”做出来，后面再继续扩展。
+            </p>
+            <a class="primary-link" href="#playlist">开始听歌</a>
+          </div>
+
+          <div class="hero-card" aria-label="音乐播放器">
+            <div class="cover-art" aria-hidden="true"></div>
+            <div class="player-panel">
+              <div class="now-playing">
+                <p class="label">正在播放</p>
+                <h2 id="trackTitle">SoundHelix Song 1</h2>
+                <p id="trackArtist">SoundHelix</p>
+              </div>
+
+              <div class="controls" aria-label="播放器控制">
+                <button id="prevBtn" class="icon-btn" type="button" aria-label="上一首">⏮</button>
+                <button id="playPauseBtn" class="play-btn" type="button" aria-label="播放">▶</button>
+                <button id="nextBtn" class="icon-btn" type="button" aria-label="下一首">⏭</button>
+              </div>
+
+              <div class="timeline">
+                <span id="currentTime">00:00</span>
+                <input id="progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="播放进度" />
+                <span id="duration">00:00</span>
+              </div>
+
+              <div class="volume-row">
+                <label for="volume">音量</label>
+                <input id="volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="音量" />
+              </div>
+
+              <audio id="audio" preload="metadata"></audio>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="playlist">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">曲库</p>
+              <h2>精选歌单</h2>
+            </div>
+            <p>点击任意歌曲即可切换播放。</p>
+          </div>
+
+          <ul id="playlistList" class="playlist" aria-label="歌曲列表"></ul>
+        </section>
+
+        <section class="section about-section" id="about">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">关于</p>
+              <h2>这个站点想做什么</h2>
+            </div>
+          </div>
+
+          <div class="about-grid">
+            <article>
+              <h3>目标</h3>
+              <p>先把一个完整的、可运行的音乐播放器雏形做出来，方便后续继续扩展成更完整的作品集页面。</p>
+            </article>
+            <article>
+              <h3>当前功能</h3>
+              <p>播放 / 暂停、上一首 / 下一首、进度条、音量控制和歌单切换都已经接好。</p>
+            </article>
+            <article>
+              <h3>后续计划</h3>
+              <p>下一步可以继续加搜索、喜欢列表、封面展示和更丰富的视觉效果。</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
